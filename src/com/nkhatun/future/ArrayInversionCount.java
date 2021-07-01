@@ -1,6 +1,14 @@
 package com.nkhatun.future;
 
 import java.util.Arrays;
+/*An array A consisting of N integers is given. An inversion is a pair of indexes (P, Q) such that P < Q and A[Q] < A[P].
+Write a function:
+class Solution { public int solution(int[] A); }
+that computes the number of inversions in A, or returns âˆ’1 if it exceeds 1,000,000,000.
+For example, in the following array:
+ A[0] = -1 A[1] = 6 A[2] = 3
+ A[3] =  4 A[4] = 7 A[5] = 4
+there are four inversions:   (1,2)  (1,3)  (1,5)  (4,5) so the function should return 4.*/
 
 public class ArrayInversionCount {
 	public static int solution(int[] A) {
@@ -30,7 +38,7 @@ public class ArrayInversionCount {
 		}
 		return inversionCount;
 	}
-	// Merge two sorted subarrays `arr[low … mid]` and `arr[mid+1 … high]`
+	// Merge two sorted subarrays `arr[low â€¦ mid]` and `arr[mid+1 â€¦ high]`
 	public static int merge(int[] arr, int[] aux, int low, int mid, int high) {
 		int k = low, i = low, j = mid + 1;
 		int inversionCount = 0;
@@ -58,5 +66,10 @@ public class ArrayInversionCount {
 			arr[i] = aux[i];
 		}
 		return inversionCount;
+	}
+
+	public static void main(String[] args) {
+		int[] a = {-1, 6, 3, 4, 7, 4};
+		System.out.println(solution(a));
 	}
 }
